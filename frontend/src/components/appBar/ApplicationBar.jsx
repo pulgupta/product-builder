@@ -6,6 +6,7 @@ import { LinkStyled } from "../../shared/common.styles";
 import { Switch, FormControlLabel } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { updateDeliveryOptions } from "../../store/actions/appActions";
+import SearchAutoComplete from "../../shared/searchAutoComplete/SearchAutoComplete";
 
 export default function ApplicationBar() {
   const dispatch = useDispatch();
@@ -24,8 +25,11 @@ export default function ApplicationBar() {
             <TypographyStyled>App Icon</TypographyStyled>
           </LinkStyled>
           <TypographyStyled variant="body1">
-            <LinkStyled to="/shop">Lets build some cakes</LinkStyled>
-            <LinkStyled to="/shop/how-it-works">How it works</LinkStyled>
+            <LinkStyled to="/shop">Shop</LinkStyled>
+            <LinkStyled to="/shop/how-it-works">Details</LinkStyled>
+          </TypographyStyled>
+          <TypographyStyled variant="span">
+            <SearchAutoComplete />
           </TypographyStyled>
           <FormControlLabel
             control={

@@ -9,4 +9,4 @@ const TypographyStyled = styled(Typography)`
   flex-grow: 1;
 `;
 
-export { RootElement, TypographyStyled };
+export { RootElement, TypographyStyled};

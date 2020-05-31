@@ -6,7 +6,7 @@ const Information = () => {
   return (
     <Grid container spacing={4}>
       <Grid item xs={12}>
-        <p>I will explain how we can build some cakes</p>
+        <p>This will be the product page. Highlighing the features of the product and showing all the reviews and other details.</p>
       </Grid>
     </Grid>
   );
