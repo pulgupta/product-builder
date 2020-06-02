@@ -29,7 +29,7 @@ export default function ApplicationBar() {
             <LinkStyled to="/shop/how-it-works">Details</LinkStyled>
           </TypographyStyled>
           <TypographyStyled variant="span">
-            <SearchAutoComplete />
+          <SearchAutoComplete />
           </TypographyStyled>
           <FormControlLabel
             control={
