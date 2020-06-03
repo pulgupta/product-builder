@@ -9,17 +9,17 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    String id;
+    private Long id;
 
-    int rating;
-    String feedback;
-    boolean disabled;
-
-    @NotNull
-    @Column(nullable = false)
-    String productId;
+    private int rating;
+    private String feedback;
+    private boolean disabled;
 
     @NotNull
     @Column(nullable = false)
-    String userId;
+    private String productId;
+
+    @NotNull
+    @Column(nullable = false)
+    private String userId;
 }

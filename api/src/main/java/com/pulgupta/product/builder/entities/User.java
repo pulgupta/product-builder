@@ -2,6 +2,7 @@ package com.pulgupta.product.builder.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -26,6 +27,9 @@ public class User {
     @NotNull
     @Column(nullable = false)
     private String dob;
+
+    @OneToMany
+    private List<Address> address;
 
     public String getUsername() {
         return username;

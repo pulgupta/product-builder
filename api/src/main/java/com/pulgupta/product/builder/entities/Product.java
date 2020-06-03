@@ -11,14 +11,16 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    String id;
+    private Long id;
 
-    String name;
-    String title;
-    String summary;
-    String detailedDescription;
-    String type;
-    Date launchDate;
-    BigDecimal price;
-    List<String> pictures;
+    private String name;
+    private String title;
+    private String summary;
+    private String detailedDescription;
+    private String type;
+    private Date launchDate;
+    private BigDecimal price;
+
+    @OneToMany
+    private List<String> pictures;
 }
