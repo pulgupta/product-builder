@@ -7,8 +7,8 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import LandingPage from "./components/LandingPage";
 import ApplicationBar from "./components/appBar/ApplicationBar";
-import Authentication from './components/login/Authentication';
-import Logout from './components/login/Logout'
+import Authentication from './components/userAuth/Authentication';
+import Logout from './components/userAuth/logout/Logout'
 import ErrorPopupContainer from "./shared/popups/ErrorPopupContainer";
 
 const store = createStore(

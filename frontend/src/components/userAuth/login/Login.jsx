@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Button, Grid, FormControl } from "@material-ui/core";
-import { authenticateUserAsync } from "../../store/actions/appActions";
+import { authenticateUserAsync } from "../../../store/actions/appActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";

@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Container, Paper, Box } from "@material-ui/core";
 import Register from "./register/Register";
-import Login from "./Login";
+import Login from "./login/Login";
 
 const Authentication = () => {
   return (

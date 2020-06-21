@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router';
-import { logout } from '../../store/actions/appActions';
+import { logout } from '../../../store/actions/appActions';
 
 const Logout = () => {
 
