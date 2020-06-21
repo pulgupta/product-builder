@@ -13,6 +13,7 @@ const ErrorPopupContainer = () => {
 
   return (
     <Popup
+      testid="popup"
       open={errorOccoured}
       heading="Well that failed quickly!"
       content="We got some error while contacting the server. Please try after sometime"

@@ -23,7 +23,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <ApplicationBar/>
+        <ApplicationBar data-testid="appBar"/>
         <ErrorPopupContainer/>
         <Switch>
           <Route path="/shop" component={Layout} />

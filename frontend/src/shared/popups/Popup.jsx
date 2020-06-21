@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 const Popup = (props) => {
   return (
     <Dialog
+      data-testid={props.testid}
       open={props.open}
       onClose={props.action}
       aria-labelledby="alert-dialog-title"
@@ -37,6 +38,7 @@ Popup.propTypes = {
   content: PropTypes.string.isRequired,
   actionText: PropTypes.string.isRequired,
   action: PropTypes.func.isRequired,
+  testid: PropTypes.string.isRequired
 };
 
 export default Popup;

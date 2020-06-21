@@ -6,7 +6,7 @@ import {
   TOGGLE_ERROR,
 } from "../actions/actionTypes";
 
-const initialState = {
+export const initialState = {
   delivery: true,
   serverError: false,
   offer: {
@@ -19,7 +19,7 @@ const initialState = {
   },
 };
 
-const appReducer = (state = initialState, action) => {
+export function appReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_DELIVERY_CHOICE:
       return {
