@@ -2,8 +2,7 @@ import React from "react";
 import { render } from "../../../../testUtils";
 import Login from "../Login";
 import { fireEvent } from "@testing-library/react";
-import { createMemoryHistory } from "history";
-import { Router, Switch, Route } from "react-router";
+import { Switch, Route } from "react-router";
 import LandingPage from "../../../LandingPage";
 
 describe("Login should work fine for any user", () => {
@@ -37,16 +36,13 @@ describe("Login should work fine for any user", () => {
   });
 
   it("should redirect to home is user is already authenticated", () => {
-    const history = createMemoryHistory();
-    history.push("/login");
     const { queryByTestId } = render(
-      <Router history={history}>
-        <Switch>
-          <Route path="/login" exact component={Login} />
-          <Route path="/" exact component={LandingPage} />
-        </Switch>
-      </Router>,
+      <Switch>
+        <Route path="/login" exact component={Login} />
+        <Route path="/" exact component={LandingPage} />
+      </Switch>,
       {
+        route: "/login",
         initialState: {
           authentication: {
             isAuthenticated: true,
