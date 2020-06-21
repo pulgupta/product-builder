@@ -2,9 +2,11 @@ import React from "react";
 import { render } from "../../../../testUtils";
 import Login from "../Login";
 import { fireEvent } from "@testing-library/react";
+import { createMemoryHistory } from "history";
+import { Router, Switch, Route } from "react-router";
+import LandingPage from "../../../LandingPage";
 
 describe("Login should work fine for any user", () => {
-
   it("should render the login control", () => {
     const { getByTestId } = render(<Login />);
     expect(getByTestId("loginWidget")).toBeInTheDocument();
@@ -21,7 +23,7 @@ describe("Login should work fine for any user", () => {
     ).toBeInTheDocument();
   });
 
-  it("should render error only for username", () => {
+  it("should submit successfully if validation passes", () => {
     const { queryByText, getByTestId } = render(<Login />);
     fireEvent.change(getByTestId("username"), {
       target: { id: "username", value: "username" },
@@ -32,5 +34,27 @@ describe("Login should work fine for any user", () => {
     fireEvent.click(getByTestId("submit"));
     expect(queryByText("Username should be more than 8 characters")).toBe(null);
     expect(queryByText("Password should be more than 8 characters")).toBe(null);
+  });
+
+  it("should redirect to home is user is already authenticated", () => {
+    const history = createMemoryHistory();
+    history.push("/login");
+    const { queryByTestId } = render(
+      <Router history={history}>
+        <Switch>
+          <Route path="/login" exact component={Login} />
+          <Route path="/" exact component={LandingPage} />
+        </Switch>
+      </Router>,
+      {
+        initialState: {
+          authentication: {
+            isAuthenticated: true,
+          },
+        },
+      }
+    );
+    expect(queryByTestId("loginWidget")).not.toBeInTheDocument();
+    expect(queryByTestId("firstContainer")).toBeInTheDocument();
   });
 });
