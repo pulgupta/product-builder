@@ -78,6 +78,7 @@ const Login = (props) => {
         <Grid item xs={12}>
           <FormControl fullWidth variant="outlined">
             <TextField
+              inputProps={{ "data-testid": "username" }}
               error={!state.valid}
               id="username"
               label="Username/Email"
@@ -93,6 +94,7 @@ const Login = (props) => {
         <Grid item xs={12}>
           <FormControl fullWidth variant="outlined">
             <TextField
+            inputProps={{ "data-testid": "password" }}
               error={!state.valid}
               id="password"
               label="Password"
