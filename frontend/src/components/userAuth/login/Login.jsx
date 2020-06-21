@@ -15,7 +15,7 @@ const Login = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  let authState = useSelector((store) => store.authentication);
+  const authState = useSelector((store) => store.authentication);
 
   const [state, setState] = useState({
     username: "",
@@ -74,7 +74,7 @@ const Login = (props) => {
     <div>
       <p>Returning users, please sign in.</p>
       <form>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} data-testid="loginWidget">
         <Grid item xs={12}>
           <FormControl fullWidth variant="outlined">
             <TextField
@@ -107,7 +107,7 @@ const Login = (props) => {
           </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <Button variant="contained" color="primary" onClick={formSubmit}>
+          <Button variant="contained" color="primary" onClick={formSubmit} data-testid="submit">
             Sign In
           </Button>
         </Grid>

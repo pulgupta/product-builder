@@ -7,7 +7,7 @@ import {
 } from "./actionTypes";
 import Axios from "axios";
 
-const API_ENDPOINT = "http://localhost:8080/";
+const API_ENDPOINT = "http://localhost:8081/";
 
 const updateDeliveryOptions = (delivery) => {
   return {
