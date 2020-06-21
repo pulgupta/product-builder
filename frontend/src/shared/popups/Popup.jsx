@@ -18,7 +18,7 @@ const Popup = (props) => {
     >
       <DialogTitle id="alert-dialog-title">{props.heading}</DialogTitle>
       <DialogContent>
-        <DialogContentText id="alert-dialog-description">
+        <DialogContentText data-testid="alert-dialog-description">
           {props.content}
         </DialogContentText>
       </DialogContent>
